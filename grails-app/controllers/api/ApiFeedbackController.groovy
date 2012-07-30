@@ -44,8 +44,9 @@ class ApiFeedbackController {
                                 title: feedbackParams.title,
                                 description: feedbackParams.description,
                                 location: new Location(latitude: feedbackParams.latitude,
-                                                        longitude: feedbackParams.longitude),
-                                author: author)
+                                                       longitude: feedbackParams.longitude),
+                                author: author,
+                                photo: Photo.findById(feedbackParams.photo_id))
         if(!feedback.save(failOnError: false, flush: true)) {
 
             def allErrorsAsText =
