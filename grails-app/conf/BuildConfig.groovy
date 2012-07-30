@@ -24,8 +24,8 @@ grails.project.dependency.resolution = {
         grailsHome()
         grailsCentral()
 
-        mavenLocal()
         mavenCentral()
+        mavenLocal()
 
         // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
         //mavenRepo "http://snapshots.repository.codehaus.org"
@@ -37,6 +37,9 @@ grails.project.dependency.resolution = {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
 
         // runtime 'mysql:mysql-connector-java:5.1.20'
+        //heroku database
+        runtime "postgresql:postgresql:8.4-702.jdbc3"
+
     }
 
     plugins {
@@ -63,8 +66,5 @@ grails.project.dependency.resolution = {
         compile ":markdown:1.0.0.RC1"
         compile ":mail:1.0"
         compile ":quartz:1.0-RC2"
-
-        //heroku database
-        runtime "postgresql:postgresql:8.4-702.jdbc3"
     }
 }
