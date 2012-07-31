@@ -17,7 +17,7 @@ class MailJob {
         readyToSend.each {feedback ->
             mailService.sendMail {
                 multipart true
-                to ["lukas.marek@gmail.com", "michal@bernhard.cz"]
+                to "lukas.marek@gmail.com", "michal@bernhard.cz"
                 subject formatSubject(feedback.title)
                 html formatBody(feedback.title, feedback.description, feedback.author.toString())
                 if (feedback.photo) {
