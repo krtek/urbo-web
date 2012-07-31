@@ -24,7 +24,7 @@
             <g:each in="${feedbacks}" var="feedback">
             (function(){
                 var location = new google.maps.LatLng(${feedback.location.latitude}, ${feedback.location.longitude});
-                var desc = '<div id="content"><h4>${feedback.title}</h4>${feedback.description.encodeAsHTML().replaceAll("\n","<br/>")}<h6>Vytvořil: ${feedback.author}</h6></div>'
+                var desc = '<div id="content"><h4>${feedback.title}</h4>${feedback.description?.markdownToHtml()}<h6>Vytvořil: ${feedback.author}</h6></div>'
                 var marker = new google.maps.Marker({map:map, draggable:true, position: location, title:"${feedback.title}"});
                 google.maps.event.addListener(marker, 'click', function() {
                     if (infowindow) {
@@ -54,7 +54,7 @@
                 <br/>
                 <div class="urbo-mini-detail">
                     <img class="urbo-image" src="${createLink(controller: 'apiFeedback', action:'getPhoto', id: feedback.photo?.id)}"/>
-                    <div class="urbo-description">${feedback.description.encodeAsHTML().replaceAll("\n","<br/>")}</div>
+                    <div class="urbo-description">${feedback.description?.markdownToHtml()}</div>
                 </div>
                 <br/>
                 <h6>Vytvořil: ${feedback.author}</h6>

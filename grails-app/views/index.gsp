@@ -41,14 +41,22 @@
 					
 				<div class="row-fluid">
 					
-					<div class="span12">
-						<h2>Pokračuj:</h2>
+					<div class="span5">
+						<h2>Scaffolding:</h2>
 						<ul class="nav nav-list">
 							<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
 								<li><g:link controller="${c.logicalPropertyName}">${c.naturalName}</g:link></li>
 							</g:each>
 						</ul>
 					</div>
+                    <div class="span5">
+                        <h2>Aplikace:</h2>
+                        <ul class="nav nav-list">
+                            <li><g:link controller="map" action="index">Mapka</g:link></li>
+                            <li><g:link controller="map" action="detail" id="3">Detail #3</g:link></li>
+                        </ul>
+
+                    </div>
 
 				</div>
 
