@@ -21,7 +21,7 @@
             var map = new google.maps.Map(document.getElementById("map-canvas"),
                     mapOptions);
             var infowindow = new google.maps.InfoWindow({content: null});
-            <g:each in="${feedbacks}" var="feedback">
+            <g:each in="${allFeedbacks}" var="feedback">
             (function(){
                 var location = new google.maps.LatLng(${feedback.location.latitude}, ${feedback.location.longitude});
                 var desc = '<div id="content"><h4>${feedback.title}</h4>${feedback.description?.markdownToHtml()}<h6>Vytvořil: ${feedback.author}</h6></div>'
@@ -48,7 +48,7 @@
     <div class="span4">
         <h3>Poslední kauzy</h3>
         <hr/>
-        <g:each in="${feedbacks}" var="feedback">
+        <g:each in="${lastFeedbacks}" var="feedback">
             <div class="well urbo-item">
                 <h4 class="urbo-item-title">
                     <g:link controller="map" action="detail" id="${feedback.id}">${feedback.title}</g:link>

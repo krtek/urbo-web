@@ -5,7 +5,8 @@ import cz.urbo.cases.Feedback
 class MapController {
 
     def index() {
-        [feedbacks: Feedback.list()]
+        [lastFeedbacks: Feedback.list(max: 5, sort: "lastUpdated", order: "desc"),
+         allFeedbacks: Feedback.list()]
     }
 
     def detail() {
