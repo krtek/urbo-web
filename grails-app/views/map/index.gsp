@@ -50,11 +50,17 @@
         <hr/>
         <g:each in="${feedbacks}" var="feedback">
             <div class="well urbo-item">
-                <h4 class="urbo-item-title">${feedback.title}&nbsp;<span class="label label-info new-urbo-item">Nový</span></h4>
+                <h4 class="urbo-item-title">
+                    <g:link controller="map" action="detail" id="${feedback.id}">${feedback.title}</g:link>
+                    <span class="label label-info new-urbo-item">Nový</span>
+                </h4>
                 <br/>
                 <div class="urbo-mini-detail">
-                    <img class="urbo-image" src="${createLink(controller: 'apiFeedback', action:'getPhoto', id: feedback.photo?.id)}"/>
-                    <div class="urbo-description">${feedback.description?.markdownToHtml()}</div>
+                    <img class="urbo-image"
+                         src="${createLink(controller: 'apiFeedback', action:'getPhoto', id: feedback.photo?.id)}"/>
+                    <div class="urbo-description">
+                        ${feedback.description?.markdownToHtml()}
+                    </div>
                 </div>
                 <br/>
                 <h6>Vytvořil: ${feedback.author}</h6>
