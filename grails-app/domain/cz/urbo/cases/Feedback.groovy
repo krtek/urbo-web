@@ -21,6 +21,8 @@ public class Feedback {
         photo nullable: true
         authorityResponse nullable: true
         state()
+        dateCreated()
+        lastUpdated()
     }
 
     String title
@@ -28,6 +30,8 @@ public class Feedback {
     String description
     Location location
     Author author
+    Date dateCreated
+    Date lastUpdated
 
     AuthorityResponse authorityResponse
 

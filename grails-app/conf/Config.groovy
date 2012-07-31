@@ -118,3 +118,6 @@ grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'cz.urbo.user.
 grails.plugins.springsecurity.authority.className = 'cz.urbo.user.Role'
 grails.plugins.springsecurity.dao.reflectionSaltSourceProperty = 'username'
 grails.plugins.springsecurity.password.encodeHashAsBase64 = true
+
+//Urbo config items:
+urbo.dateFormat = "dd.MM.yyyy HH:mm:ss"
