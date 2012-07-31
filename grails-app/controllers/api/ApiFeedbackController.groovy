@@ -127,4 +127,23 @@ class ApiFeedbackController {
 
     }
 
+    def getPhoto() {
+
+        def photoId = params.id
+        def photo = Photo.findById(photoId)
+
+//        render(photo.data)
+
+        if (photo) {
+            response.contentType = "application/octet-stream"
+            response.addHeader("Content-disposition", "filename='photo${photo.id}.jpeg'")
+            response.outputStream << photo.data
+            return
+        }
+        else {
+            render("Photo with id ${photoId} is not available")
+        }
+
+    }
+
 }

@@ -22,6 +22,8 @@ class UrlMappings {
 
         "/api/v1/"(controller: "apiHelp")
 
+        "/api/v1/photo/$id"(controller: "apiFeedback", action: "getPhoto")
+
 		"/"(view:"/index")
 		"500"(view:'/error')
 	}
