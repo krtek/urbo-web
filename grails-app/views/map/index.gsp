@@ -3,7 +3,13 @@
 <html>
 <head>
     <meta name="layout" content="bootstrap"/>
+
     <title>Urbo Mapa</title>
+
+    <!-- STYLES -->
+    <link href="${resource(dir: 'css', file: 'urbo.css')}" rel="stylesheet" type="text/css">
+
+    <!-- SCRIPTS -->
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAbSOm6FoQBeLIAuIoSCPE3oks4k830KSE&sensor=false"></script>
     <script type="text/javascript">
         function initialize() {
@@ -12,7 +18,7 @@
                 zoom: 7,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
-            var map = new google.maps.Map(document.getElementById("map_canvas"),
+            var map = new google.maps.Map(document.getElementById("map-canvas"),
                     mapOptions);
             var infowindow = new google.maps.InfoWindow({content: null});
             <g:each in="${feedbacks}" var="feedback">
@@ -37,16 +43,19 @@
     <div class="span8">
         <h3>Urbo mapa</h3>
         <hr/>
-        <div id="map_canvas" style="width:100%; height:500px;"></div>
+        <div id="map-canvas"></div>
     </div>
     <div class="span4">
         <h3>Poslední kauzy</h3>
         <hr/>
         <g:each in="${feedbacks}" var="feedback">
-            <div class="well">
-                <h4>${feedback.title}&nbsp;<span class="label label-info">Nový</span></h4>
+            <div class="well urbo-item">
+                <h4 class="urbo-item-title">${feedback.title}&nbsp;<span class="label label-info new-urbo-item">Nový</span></h4>
                 <br/>
-                <div>${feedback.description.encodeAsHTML().replaceAll("\n","<br/>")}</div>
+                <div class="urbo-mini-detail">
+                    <img class="urbo-image" src="${createLink(controller: 'apiFeedback', action:'getPhoto', id: feedback.photo?.id)}"/>
+                    <div class="urbo-description">${feedback.description.encodeAsHTML().replaceAll("\n","<br/>")}</div>
+                </div>
                 <br/>
                 <h6>Vytvořil: ${feedback.author}</h6>
             </div>
