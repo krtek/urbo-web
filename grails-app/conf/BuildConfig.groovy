@@ -40,6 +40,7 @@ grails.project.dependency.resolution = {
         //heroku database
         runtime "postgresql:postgresql:8.4-702.jdbc3"
 
+        compile "org.imgscalr:imgscalr-lib:4.2"
     }
 
     plugins {

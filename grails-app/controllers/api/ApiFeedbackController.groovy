@@ -7,6 +7,10 @@ import cz.urbo.cases.Email
 import cz.urbo.cases.Feedback
 import cz.urbo.cases.Location
 import cz.urbo.cases.Photo
+import java.awt.image.BufferedImage
+
+import static org.imgscalr.Scalr.*
+import javax.imageio.ImageIO;
 
 /**
  * This is WEB API of URBO Application
@@ -131,6 +135,7 @@ class ApiFeedbackController {
 
         def photoId = params.id
         def photo = Photo.findById(photoId)
+        assert photo != null
 
 //        render(photo.data)
 
@@ -144,6 +149,23 @@ class ApiFeedbackController {
             render("Photo with id ${photoId} is not available")
         }
 
+    }
+
+    def getPhotoThumbnail() {
+
+        def photoId = params.id
+        def photo = Photo.findById(photoId)
+        assert photo != null
+
+        BufferedImage image = ImageIO.read(new ByteArrayInputStream(photo.data))
+        BufferedImage thumbnail =
+            resize(image, Method.SPEED, Mode.FIT_TO_WIDTH,
+                    200, 200, OP_ANTIALIAS);
+
+        response.contentType = "image/jpeg"
+        response.addHeader("Content-disposition", "filename='photo${photo.id}.jpeg'")
+        ImageIO.write(thumbnail, "JPEG", response.outputStream)
+        return
     }
 
 }

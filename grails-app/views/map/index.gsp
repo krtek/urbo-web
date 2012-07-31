@@ -61,7 +61,7 @@
                 <div class="urbo-mini-detail">
                     <a href="${createLink(controller: 'apiFeedback', action:'getPhoto', id: feedback.photo?.id)}" rel="shadowbox[images];player=img" title="${feedback.title}">
                         <img class="urbo-thumbnail"
-                             src="${createLink(controller: 'apiFeedback', action:'getPhoto', id: feedback.photo?.id)}"/>
+                             src="${createLink(controller: 'apiFeedback', action:'getPhotoThumbnail', id: feedback.photo?.id)}"/>
                     </a>
                     <div class="urbo-description">
                         ${feedback.description?.markdownToHtml()}
