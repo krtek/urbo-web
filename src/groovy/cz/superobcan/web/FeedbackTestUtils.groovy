@@ -1,6 +1,7 @@
 package cz.superobcan.web
 
 import cz.urbo.cases.Author
+import cz.urbo.cases.AuthorityResponse
 import cz.urbo.cases.Email
 import cz.urbo.cases.Feedback
 import cz.urbo.cases.Location
@@ -25,16 +26,31 @@ class FeedbackTestUtils {
                 email: new Email(address: "lukas.marek@gmail.com"))
 
 
+        def authorityResponseText =
+            """Milý občane,
+
+                  vámi nahlášený karamelový drak nebo chcete-li hadrová panenka, byl odstraněn dne
+               31.07.2012. Zápach jak věříme zmizí v nejbližších pár dnech v závislosti na tom jak a jestli bude
+               místnost větrána.
+
+               Děkujeme za zpětnou vazbu a těšíme se na Váš další podnět.
+
+               S pozdravem Marie Urbová
+               Odbor pro styk s veřejností, Městský úřad Praha 1
+                """
+
+        def authorityResponse = new AuthorityResponse(content: authorityResponseText)
         [
                 michal,
                 krtek,
                 photoOfUrboTheGreat,
+                authorityResponse,
 
                 new Feedback(
                         author: michal,
                         title: "Přechod pro chodce má zelenou moc krátce",
                         location: new Location(latitude: 50.076, longitude: 14.408),
-                        state: FeedbackState.CREATED,
+                        state: FeedbackState.SENT_TO_AUTHORITY,
                         photo: photoOfUrboTheGreat
                 ),
 
@@ -43,7 +59,8 @@ class FeedbackTestUtils {
                         title: "Někdo hodil karamelovýho draka do pisoáru",
                         description: "děsně to zapáchá",
                         location: new Location(latitude: 50.07647, longitude: 14.40216),
-                        state: FeedbackState.CREATED
+                        state: FeedbackState.FIXED,
+                        authorityResponse: authorityResponse
                 ),
 
                 new Feedback(
