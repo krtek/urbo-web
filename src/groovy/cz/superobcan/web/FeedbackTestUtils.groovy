@@ -4,17 +4,16 @@ import cz.urbo.cases.Author
 import cz.urbo.cases.Email
 import cz.urbo.cases.Feedback
 import cz.urbo.cases.Location
+import cz.urbo.cases.Photo
 
-/**
- * Created with IntelliJ IDEA.
- * User: michal
- * Date: 7/23/12
- * Time: 12:34 PM
- * To change this template use File | Settings | File Templates.
- */
 class FeedbackTestUtils {
 
     static def createTestingFeedbacks() {
+
+        def photoOfUrboTheGreat = new Photo()
+        def urboPictureStream = FeedbackTestUtils.class.getResourceAsStream("urbo_picture_for_dev_purposes.jpg")
+        photoOfUrboTheGreat.data = urboPictureStream.getBytes()
+
         def michal = new Author(
                 name: "Michal",
                 surname: "Bernhard",
@@ -29,12 +28,14 @@ class FeedbackTestUtils {
         [
                 michal,
                 krtek,
+                photoOfUrboTheGreat,
 
                 new Feedback(
                         author: michal,
                         title: "Přechod pro chodce má zelenou moc krátce",
                         location: new Location(latitude: 50.076, longitude: 14.408),
-                        state: FeedbackState.CREATED
+                        state: FeedbackState.CREATED,
+                        photo: photoOfUrboTheGreat
                 ),
 
                 new Feedback(
