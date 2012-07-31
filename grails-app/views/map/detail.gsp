@@ -40,9 +40,14 @@
 </head>
 <body>
 <div class="row-fluid">
-    <div class="span8">
+    <div class="span11">
         <h1>${feedback.title}</h1>
         <hr/>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span8">
+
         <div class="well">
             <h2>Popis problému:</h2>
             <p>${feedback.description?.markdownToHtml()}</p>
