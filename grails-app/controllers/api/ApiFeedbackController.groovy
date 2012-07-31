@@ -135,7 +135,7 @@ class ApiFeedbackController {
 //        render(photo.data)
 
         if (photo) {
-            response.contentType = "application/octet-stream"
+            response.contentType = "image/jpeg"
             response.addHeader("Content-disposition", "filename='photo${photo.id}.jpeg'")
             response.outputStream << photo.data
             return

@@ -56,7 +56,7 @@
                 </h4>
                 <br/>
                 <div class="urbo-mini-detail">
-                    <img class="urbo-image"
+                    <img class="urbo-thumbnail"
                          src="${createLink(controller: 'apiFeedback', action:'getPhoto', id: feedback.photo?.id)}"/>
                     <div class="urbo-description">
                         ${feedback.description?.markdownToHtml()}

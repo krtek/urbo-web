@@ -4,17 +4,28 @@
    height: 500px;
 }
 
+#map-thumbnail {
+    width: 100%;
+    height: 200px;
+}
+
+
 .urbo-item .urbo-mini-detail {
     min-height: 100px;
     max-height: 180px;
 
 }
 
-.urbo-mini-detail .urbo-image {
+.urbo-thumbnail {
     width: 120px;
     height: 100px;
 
     float: left;
 
     margin-right: 10px;
+}
+
+.urbo-image {
+    width: 100%;
+    height: 200px;
 }
