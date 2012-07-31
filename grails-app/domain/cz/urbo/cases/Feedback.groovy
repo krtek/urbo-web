@@ -25,6 +25,10 @@ public class Feedback {
         lastUpdated()
     }
 
+    static mapping = {
+        description type: "text"
+    }
+
     String title
     Photo photo
     String description
