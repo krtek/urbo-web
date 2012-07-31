@@ -18,7 +18,7 @@
         <hr />
         <h2>Odpověď úřadu:</h2>
         <g:if test="${feedback.authorityResponse}">
-            <p>${feedback.authorityResponse?.markdownToHtml()}</p>
+            <p>${feedback.authorityResponse.content?.markdownToHtml()}</p>
         </g:if>
         <g:else>
             <p>Odpověď zatím nepřišla...</p>
