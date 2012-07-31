@@ -73,7 +73,6 @@
 
 <!-- Map initialization-->
 <script type="text/javascript">
-    $.noConflict();
     jQuery(function($) {
         initialize();
     });
