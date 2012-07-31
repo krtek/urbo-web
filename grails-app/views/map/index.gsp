@@ -7,9 +7,12 @@
     <title>Urbo Mapa</title>
 
     <!-- STYLES -->
+    <link href="${resource(dir: 'css', file: 'shadowbox.css')}" rel="stylesheet" type="text/css">
     <link href="${resource(dir: 'css', file: 'urbo.css')}" rel="stylesheet" type="text/css">
 
+
     <!-- SCRIPTS -->
+    <script type="text/javascript" src="${resource(dir: 'js', file: 'shadowbox.js')}"></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAbSOm6FoQBeLIAuIoSCPE3oks4k830KSE&sensor=false"></script>
     <script type="text/javascript">
         function initialize() {
@@ -56,8 +59,10 @@
                 </h4>
                 <br/>
                 <div class="urbo-mini-detail">
-                    <img class="urbo-thumbnail"
-                         src="${createLink(controller: 'apiFeedback', action:'getPhoto', id: feedback.photo?.id)}"/>
+                    <a href="${createLink(controller: 'apiFeedback', action:'getPhoto', id: feedback.photo?.id)}" rel="shadowbox[images];player=img" title="${feedback.title}">
+                        <img class="urbo-thumbnail"
+                             src="${createLink(controller: 'apiFeedback', action:'getPhoto', id: feedback.photo?.id)}"/>
+                    </a>
                     <div class="urbo-description">
                         ${feedback.description?.markdownToHtml()}
                     </div>
@@ -74,6 +79,10 @@
 <script type="text/javascript">
     jQuery(function($) {
         initialize()
+    });
+    Shadowbox.init({
+        handleOversize: "resize",
+        modal: false
     });
 </script>
 </body>
