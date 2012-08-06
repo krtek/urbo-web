@@ -1,11 +1,11 @@
-package cz.superobcan.web.cz.superobcan
+package api
 
 import org.junit.Before
 import org.junit.Test
 import org.springframework.http.HttpMethod
 import cz.urbo.cases.Feedback
 import api.ApiFeedbackController
-
+import grails.test.mixin.TestFor
 
 class FeedbackApiSaveHappyDayTest extends GroovyTestCase {
 
@@ -13,7 +13,6 @@ class FeedbackApiSaveHappyDayTest extends GroovyTestCase {
     public void beforeEachTest() {
 
         def controller = new ApiFeedbackController()
-
         controller.request.contentType = "text/json"
         controller.request.content = '''
 

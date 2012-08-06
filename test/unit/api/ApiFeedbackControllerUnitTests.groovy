@@ -1,4 +1,4 @@
-package web
+package api
 
 import cz.superobcan.web.FeedbackTestUtils
 import grails.test.MockUtils
@@ -11,7 +11,7 @@ import cz.urbo.cases.Feedback
  */
 @TestFor(ApiFeedbackController)
 @Mock([Feedback])
-class ApiFeedbackControllerTests {
+class ApiFeedbackControllerUnitTests {
 
     void testFindAllJsonResponse() {
 
@@ -21,7 +21,7 @@ class ApiFeedbackControllerTests {
             GrailsUnitTestMixin (@TestFor do it for you)
          */
         defineBeans {
-             feedbackService(FeedbackService)
+             feedbackService(web.FeedbackService)
         }
 
         /* otherwise Feedback.list() called in controller findAll throws NPE as Feedback is not initialized at all */

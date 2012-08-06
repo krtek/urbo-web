@@ -1,4 +1,4 @@
-package cz.superobcan.web.cz.superobcan
+package api
 
 import org.junit.Test
 import web.MailJob

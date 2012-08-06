@@ -1,10 +1,12 @@
-package cz.superobcan.web.cz.superobcan
+package api
 
 import org.apache.commons.lang.StringUtils
 import org.junit.Test
 import org.springframework.http.HttpMethod
 import cz.urbo.cases.Feedback
 import api.ApiFeedbackController
+import grails.test.mixin.TestFor
+
 
 class FeedbackApiSaveFailuresTest extends GroovyTestCase {
 
@@ -36,7 +38,6 @@ class FeedbackApiSaveFailuresTest extends GroovyTestCase {
     @Test
     void shouldResponseWithErrorJsonWhenSaveJsonApiWithMissingTitleIsCalled() {
         def controller = new ApiFeedbackController()
-
         controller.request.contentType = "text/json"
         controller.request.content = '''
 
@@ -61,4 +62,7 @@ class FeedbackApiSaveFailuresTest extends GroovyTestCase {
         assert StringUtils.deleteWhitespace(responseContentAsString) == StringUtils.deleteWhitespace(expectedJson)
 
     }
+
+
+
 }
