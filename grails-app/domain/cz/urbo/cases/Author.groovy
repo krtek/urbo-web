@@ -16,6 +16,7 @@ class Author {
 
     @Override
     String toString() {
-        "[${identification}]@${provider}"
+        //hide e-mail – if present
+        (identification ==~ /.*@.*/) ? identification.replaceFirst(/@.*/, "@...") : identification
     }
 }
