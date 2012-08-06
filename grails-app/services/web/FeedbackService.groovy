@@ -15,9 +15,9 @@ class FeedbackService {
             [id: feedback.id,
              title: feedback.title,
              description: feedback.description,
-             latitude: feedback.location.latitude,
-             longitude: feedback.location.longitude,
-             authority_response: feedback.authorityResponse]
+             latitude: feedback.location?.latitude,
+             longitude: feedback.location?.longitude,
+             authority_response: feedback.authorityResponse?.content]
         }
 
         def builder = new JsonBuilder(feedbacks: feedbacksConverted)

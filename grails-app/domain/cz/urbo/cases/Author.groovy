@@ -2,19 +2,20 @@ package cz.urbo.cases
 
 class Author {
 
-    static hasMany = [feedback : Feedback]
-    static embedded = ['email']
-
     static constraints = {
+        provider()
+        identification()
     }
 
-    String name
-    String surname
+    /** Author provider service. E.g. Google, Facebook, Twitter  **/
+    String provider;
+    /** Author ID in provider scope. This would be probably an e-mail address. */
+    String identification;
 
-    Email email
+
 
     @Override
     String toString() {
-        "${name} ${surname}"
+        "[${identification}]@${provider}"
     }
 }

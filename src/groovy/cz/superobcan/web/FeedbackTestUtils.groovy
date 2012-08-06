@@ -2,7 +2,6 @@ package cz.superobcan.web
 
 import cz.urbo.cases.Author
 import cz.urbo.cases.AuthorityResponse
-import cz.urbo.cases.Email
 import cz.urbo.cases.Feedback
 import cz.urbo.cases.Location
 import cz.urbo.cases.Photo
@@ -16,14 +15,12 @@ class FeedbackTestUtils {
         photoOfUrboTheGreat.data = urboPictureStream.getBytes()
 
         def michal = new Author(
-                name: "Michal",
-                surname: "Bernhard",
-                email: new Email(address: "michal@bernhard.cz"))
+                provider: "GOOGLE",
+                identification: "michal@bernhard.cz")
 
         def krtek =  new Author(
-                name: "Lukáš",
-                surname: "Marek",
-                email: new Email(address: "lukas.marek@gmail.com"))
+                provider: "GOOGLE",
+                identification: "lukas.marek@gmail.com")
 
 
         def authorityResponseText =

@@ -3,7 +3,6 @@ package api
 import cz.urbo.web.api.utils.org.apache.commons.httpclient.HttpStatus
 import groovy.json.JsonBuilder
 import cz.urbo.cases.Author
-import cz.urbo.cases.Email
 import cz.urbo.cases.Feedback
 import cz.urbo.cases.Location
 import cz.urbo.cases.Photo
@@ -38,9 +37,9 @@ class ApiFeedbackController {
 
         def feedbackParams = request.JSON.feedback // when parseRequest in urlmapping is true then params.feedback is ok
         def author = new Author(
-                name: "Urbo",
-                surname: "TheGreat",
-                email: new Email(address: "urbo@urbo.eu"))
+                identification: "admin@urbo.cz",
+                provider: "GOOGLE"
+        )
 
         author.save()
 
