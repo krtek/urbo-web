@@ -6,6 +6,7 @@ import org.springframework.http.HttpMethod
 import cz.urbo.cases.Feedback
 import api.ApiFeedbackController
 import grails.test.mixin.TestFor
+import cz.urbo.cases.Author
 
 class FeedbackApiSaveHappyDayTest extends GroovyTestCase {
 
@@ -22,8 +23,10 @@ class FeedbackApiSaveHappyDayTest extends GroovyTestCase {
                     "description": "podrobnější popis problému",
                     "latitude": 50.076,
                     "longitude": 14.408,
-                    "photo_id": ""
-                 }
+                    "photo_id": "",
+                    "provider" : "GOOGLE",
+                    "identification" : "budulinek@liska.cz"
+                }
             }
 
         '''.getBytes("utf-8")
@@ -31,7 +34,22 @@ class FeedbackApiSaveHappyDayTest extends GroovyTestCase {
         controller.request.requestMethod = HttpMethod.POST
 
         controller.save()
+        controller.request.content = '''
+            {
 
+        "feedback": {
+            "title": "přechod pro chodce má zelenou moc krátce II",
+            "description": "Už zase!",
+            "latitude": 50.076,
+            "longitude": 14.408,
+            "photo_id": "",
+            "provider" : "GOOGLE",
+            "identification" : "budulinek@liska.cz"
+            }
+        }
+        '''.getBytes("utf-8")
+
+        controller.save()
     }
 
     @Test
@@ -56,6 +74,19 @@ class FeedbackApiSaveHappyDayTest extends GroovyTestCase {
     public void callToJsonSaveApiShouldSaveAndDescriptionIsRight() {
         def feedback = Feedback.list().get(0)
         assert  feedback.description == "podrobnější popis problému"
+    }
+
+    @Test
+    public void callToJsonSaveApiShouldSaveAuthorOnlyOnce() {
+        def authors = Author.list()
+        assertEquals("Author should be saved only once!",  1, authors.size())
+    }
+
+    @Test
+    public void callToJsonSaveApiShouldSaveAuthorRight() {
+        def author = Author.list().get(0)
+        assertEquals("Author id", "budulinek@liska.cz", author.identification)
+        assertEquals("Author provider", "GOOGLE", author.provider)
     }
 
 }
