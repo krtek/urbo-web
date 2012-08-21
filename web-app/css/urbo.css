@@ -1,4 +1,3 @@
-
 #map-canvas {
    width: 100%;
    height: 500px;
@@ -28,4 +27,20 @@
 .urbo-image {
     width: 100%;
     height: 200px;
+}
+
+#map-canvas img {
+    max-width: none;
+}
+
+#map-canvas label {
+    width: auto; display:inline;
+}
+
+#map-thumbnail img {
+    max-width: none;
+}
+
+#map-thumbnail label {
+    width: auto; display:inline;
 }
