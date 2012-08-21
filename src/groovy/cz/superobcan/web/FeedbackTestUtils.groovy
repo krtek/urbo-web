@@ -17,12 +17,14 @@ class FeedbackTestUtils {
         def michal = new Author(
                 provider: "GOOGLE",
                 identification: "michal@bernhard.cz",
-                name: "Michal Bernhard")
+                name: "Michal Bernhard",
+                id: 1)
 
         def krtek =  new Author(
                 provider: "GOOGLE",
                 identification: "lukas.marek@gmail.com",
-                name: "Lukáš Marek")
+                name: "Lukáš Marek",
+                id: 2)
 
 
         def authorityResponseText =
