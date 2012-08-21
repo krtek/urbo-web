@@ -60,7 +60,7 @@ grails.project.dependency.resolution = {
         compile ':cache:1.0.0'
 
         //twitter bootstrap scaffolding
-        runtime (":twitter-bootstrap:2.0.2.25") { excludes 'svn' }
+        runtime (":twitter-bootstrap:2.0.4") { excludes 'svn' }
         runtime ':fields:1.0.1'
 
         //mail capabilities and background tasks
