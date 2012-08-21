@@ -90,13 +90,14 @@ class ApiFeedbackController {
     private Author findOrCreateAuthor(feedbackParams) {
         def author = [
                 identification: feedbackParams.identification,
-                provider: feedbackParams.provider]
+                provider: feedbackParams.provider,
+                name:  feedbackParams.name]
 
         def authorObject = Author.findByProviderAndIdentification(author.provider, author.identification)
 
         if (!authorObject) {
             //author not found - let's create one
-            authorObject = new Author(identification: author.identification, provider: author.provider)
+            authorObject = new Author(identification: author.identification, provider: author.provider, name: author.name)
             //and save it to database
             authorObject.save()
         }

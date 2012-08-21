@@ -25,7 +25,8 @@ class FeedbackApiSaveFailuresTest extends GroovyTestCase {
                     "longitude": 14.408,
                     "photo_id": "",
                     "provider" : "GOOGLE",
-                    "identification" : "budulinek@liska.cz"
+                    "identification" : "budulinek@liska.cz",
+                    "name" : "Budulínek"
                 }
             }
 
@@ -51,7 +52,8 @@ class FeedbackApiSaveFailuresTest extends GroovyTestCase {
                     "longitude": 14.408,
                     "photo_id": "",
                     "provider" : "GOOGLE",
-                    "identification" : "budulinek@liska.cz"
+                    "identification" : "budulinek@liska.cz",
+                    "name" : "Budulínek"
                 }
             }
 
@@ -84,6 +86,7 @@ class FeedbackApiSaveFailuresTest extends GroovyTestCase {
                     "longitude": 14.408,
                     "photo_id": "",
                     "provider" : "GOOGLE",
+                    "name" : "Budulínek"
                 }
             }
 

@@ -25,7 +25,8 @@ class FeedbackApiSaveHappyDayTest extends GroovyTestCase {
                     "longitude": 14.408,
                     "photo_id": "",
                     "provider" : "GOOGLE",
-                    "identification" : "budulinek@liska.cz"
+                    "identification" : "budulinek@liska.cz",
+                    "name" : "Budulínek"
                 }
             }
 
@@ -45,6 +46,7 @@ class FeedbackApiSaveHappyDayTest extends GroovyTestCase {
             "photo_id": "",
             "provider" : "GOOGLE",
             "identification" : "budulinek@liska.cz"
+            "name" : "Budulínek"
             }
         }
         '''.getBytes("utf-8")

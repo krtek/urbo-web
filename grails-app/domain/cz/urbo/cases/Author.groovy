@@ -3,6 +3,7 @@ package cz.urbo.cases
 class Author {
 
     static constraints = {
+        name()
         provider()
         identification()
     }
@@ -11,12 +12,13 @@ class Author {
     String provider;
     /** Author ID in provider scope. This would be probably an e-mail address. */
     String identification;
+    /** Human readable name. E.g. Alfons Mucha.*/
+    String name;
 
 
 
     @Override
     String toString() {
-        //hide e-mail – if present
-        (identification ==~ /.*@.*/) ? identification.replaceFirst(/@.*/, "@...") : identification
+        name
     }
 }
