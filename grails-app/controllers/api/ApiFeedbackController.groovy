@@ -171,7 +171,7 @@ class ApiFeedbackController {
 
         BufferedImage image = ImageIO.read(new ByteArrayInputStream(photo.data))
         BufferedImage thumbnail =
-            resize(image, Method.SPEED, Mode.FIT_TO_WIDTH,
+            resize(image, Method.SPEED, Mode.AUTOMATIC,
                     200, 200, OP_ANTIALIAS);
 
         response.contentType = "image/jpeg"
