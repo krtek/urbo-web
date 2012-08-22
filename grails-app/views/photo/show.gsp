@@ -49,9 +49,18 @@
 				<g:form>
 					<g:hiddenField name="id" value="${photoInstance?.id}" />
 					<div class="form-actions">
-						<g:link class="btn" action="edit" id="${photoInstance?.id}">
+                        <g:link class="btn" action="rotateLeft" id="${photoInstance?.id}">
+                            <i class="icon-arrow-left"></i>
+                            <g:message code="default.button.edit.rotate_left" default="Rotate left" />
+                        </g:link>
+
+                        <g:link class="btn" action="rotateRight" id="${photoInstance?.id}">
+                            <i class="icon-arrow-right"></i>
+                            <g:message code="default.button.edit.rotate_right" default="Rotate right" />
+                        </g:link>
+                        <g:link class="btn" action="edit" id="${photoInstance?.id}">
 							<i class="icon-pencil"></i>
-							<g:message code="default.button.edit.label" default="Edit" />
+							<g:message code="default.button.edit.replace" default="Replace" />
 						</g:link>
 						<button class="btn btn-danger" type="submit" name="_action_delete">
 							<i class="icon-trash icon-white"></i>
