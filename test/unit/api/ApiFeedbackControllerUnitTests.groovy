@@ -6,11 +6,15 @@ import grails.test.mixin.*
 import org.apache.commons.lang.StringUtils
 import api.ApiFeedbackController
 import cz.urbo.cases.Feedback
+import cz.urbo.cases.Author
+import cz.urbo.cases.Photo
+import cz.urbo.cases.Location
+import cz.urbo.cases.AuthorityResponse
 /**
  * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
  */
 @TestFor(ApiFeedbackController)
-@Mock([Feedback])
+@Mock([Author, AuthorityResponse, Feedback, Location, Photo])
 class ApiFeedbackControllerUnitTests {
 
     void testFindAllJsonResponse() {
@@ -68,6 +72,15 @@ class ApiFeedbackControllerUnitTests {
 
     }
 
+    void testFindAllByAuthorJsonResponse() {
+        defineBeans {
+             feedbackService(web.FeedbackService)
+        }
 
+        /* otherwise Feedback.list() called in controller findAll throws NPE as Feedback is not initialized at all */
+        FeedbackTestUtils.createTestingFeedbacks()*.save()
 
+        assertEquals(2, controller.findAllByProviderAndIdentification("GOOGLE", "michal@bernhard.cz").size())
+        assertEquals(0, controller.findAllByProviderAndIdentification("SEZNAM", "nikdo@seznam.cz").size())
+    }
 }

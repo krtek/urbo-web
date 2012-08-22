@@ -29,6 +29,23 @@ class ApiFeedbackController {
         def feedbacks = Feedback.list()
         def feedbacksAsJson = feedbackService.convertToJson(feedbacks)
         render(contentType: "application/json", text: feedbacksAsJson)
+        return feedbacks
+    }
+
+    def findByAuthor() {
+        def authorParams = request.JSON.author
+        findAllByProviderAndIdentification(authorParams.provider, authorParams.identification)
+    }
+
+    /**
+     * This action is used to list feedbacks from a desired author
+     */
+    def findAllByProviderAndIdentification(String provider, String identification) {
+        List<Author> authors = Author.findAllByProviderAndIdentification(provider, identification)
+        def feedbacks = authors ? Feedback.findAllByAuthor(authors.get(0)) : []
+        def feedbacksAsJson = feedbackService.convertToJson(feedbacks)
+        render(contentType: "application/json", text: feedbacksAsJson)
+        return feedbacks
     }
 
     /**
