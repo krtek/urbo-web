@@ -26,7 +26,7 @@ environments {
     }
     production {
         dataSource {
-            dbCreate = "validate"
+            dbCreate = "update"
             driverClassName = "org.postgresql.Driver"
             dialect = org.hibernate.dialect.PostgreSQLDialect
 
