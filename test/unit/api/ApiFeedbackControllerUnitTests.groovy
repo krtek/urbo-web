@@ -80,7 +80,7 @@ class ApiFeedbackControllerUnitTests {
         /* otherwise Feedback.list() called in controller findAll throws NPE as Feedback is not initialized at all */
         FeedbackTestUtils.createTestingFeedbacks()*.save()
 
-        assertEquals(2, controller.findAllByProviderAndIdentification("GOOGLE", "michal@bernhard.cz").size())
-        assertEquals(0, controller.findAllByProviderAndIdentification("SEZNAM", "nikdo@seznam.cz").size())
+        assertEquals(2, controller.findAllByProviderAndIdentification("GOOGLE", "michal@bernhard.cz", 0).size())
+        assertEquals(0, controller.findAllByProviderAndIdentification("SEZNAM", "nikdo@seznam.cz", 0).size())
     }
 }
