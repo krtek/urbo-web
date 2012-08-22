@@ -53,9 +53,9 @@
         <hr/>
         <g:each in="${lastFeedbacks}" var="feedback">
             <div class="well urbo-item">
+                <span class="label label-info">${feedback.state.description}</span>
                 <h4 class="urbo-item-title">
                     <g:link controller="map" action="detail" id="${feedback.id}">${feedback.title}</g:link>
-                    <span class="label label-info new-urbo-item">Nový</span>
                 </h4>
                 <br/>
                 <div class="urbo-mini-detail">
