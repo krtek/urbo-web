@@ -17,14 +17,13 @@ class FeedbackService {
              description: feedback.description,
              latitude: feedback.location?.latitude,
              longitude: feedback.location?.longitude,
-             authority_response: feedback.authorityResponse?.content]
+             authority_response: feedback.authorityResponse?.content,
+             state: feedback.state?.description,
+             lastUpdated: feedback.lastUpdated?.format("dd.MM.yyyy")]
         }
 
         def builder = new JsonBuilder(feedbacks: feedbacksConverted)
 
-
-
         return builder.toPrettyString()
-
     }
 }

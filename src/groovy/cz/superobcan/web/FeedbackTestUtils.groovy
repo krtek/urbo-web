@@ -25,7 +25,11 @@ class FeedbackTestUtils {
                 identification: "lukas.marek@gmail.com",
                 name: "Lukáš Marek",
                 id: 2)
-
+        def anonymous = new Author(
+                provider: "None",
+                identification: "anonymous",
+                name: "Anonymní zbabělec",
+                id: 3)
 
         def authorityResponseText =
 """Milý občane,
@@ -44,6 +48,7 @@ Odbor pro styk s veřejností, Městský úřad Praha 1
         [
                 michal,
                 krtek,
+                anonymous,
                 photoOfUrboTheGreat,
                 authorityResponse,
 
@@ -70,7 +75,16 @@ Odbor pro styk s veřejností, Městský úřad Praha 1
                         description: "Na chodníku se válí krabice, slepice, konvice, truhlice, \n hned pošlete oranžový čepice!",
                         location: new Location(latitude: 50.02678, longitude: 14.43455),
                         state: FeedbackState.CREATED
+                ),
+
+                new Feedback(
+                        author: anonymous,
+                        title: "Nečitelná cedule",
+                        description: "Rozsypaný text, nevalné podsvícení, prosím opravte to!",
+                        location: new Location(latitude: 50.026, longitude: 14.30),
+                        state: FeedbackState.CREATED
                 )
+
         ]
 
     }
