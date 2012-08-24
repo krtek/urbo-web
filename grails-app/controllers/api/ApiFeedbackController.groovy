@@ -20,6 +20,7 @@ class ApiFeedbackController {
     static allowedMethods = [save: 'POST']
 
     def feedbackService
+    def thumbnailCacheService
 
     def index() {
         findAll()
@@ -182,20 +183,10 @@ class ApiFeedbackController {
     }
 
     def getPhotoThumbnail() {
-
-        def photoId = params.id
-        def photo = Photo.findById(photoId)
-        assert photo != null
-
-        BufferedImage image = ImageIO.read(new ByteArrayInputStream(photo.data))
-        BufferedImage thumbnail =
-            resize(image, Method.SPEED, Mode.AUTOMATIC,
-                    params.width?.isInteger() ? params.width as Integer : 200,
-                    params.height?.isInteger() ? params.height as Integer : 200,
-                    OP_ANTIALIAS);
+        def thumbnail = thumbnailCacheService.getThumbnail(params.id, params.width, params.height)
 
         response.contentType = "image/jpeg"
-        response.addHeader("Content-disposition", "filename='photo${photo.id}.jpeg'")
+        response.addHeader("Content-disposition", "filename='photo${params.id}.jpeg'")
         ImageIO.write(thumbnail, "JPEG", response.outputStream)
         return
     }

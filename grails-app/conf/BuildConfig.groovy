@@ -41,6 +41,7 @@ grails.project.dependency.resolution = {
         runtime "postgresql:postgresql:8.4-702.jdbc3"
 
         compile "org.imgscalr:imgscalr-lib:4.2"
+        compile "com.google.guava:guava:13.0"
     }
 
     plugins {
