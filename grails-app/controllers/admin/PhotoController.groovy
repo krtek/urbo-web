@@ -10,6 +10,7 @@ import javax.imageio.ImageIO
 @Secured(['ROLE_ADMIN'])
 class PhotoController {
     static def scaffold = Photo
+    def thumbnailCacheService
 
 
     public rotateLeft() {
@@ -28,6 +29,10 @@ class PhotoController {
         image = rotate(image, rotation, OP_ANTIALIAS)
         photo.data = encodeImage(image)
         photo.save()
+
+        //don't forget to invalidate thumbnail cache. Should invalidate only the specific thumbnail
+        thumbnailCacheService.invalidate()
+
         redirect(action: "show", id: id)
     }
 

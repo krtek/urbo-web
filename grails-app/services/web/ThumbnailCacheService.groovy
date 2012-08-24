@@ -39,4 +39,8 @@ class ThumbnailCacheService {
             }
         });
     }
+
+    def invalidate() {
+        cache.invalidateAll();
+    }
 }
