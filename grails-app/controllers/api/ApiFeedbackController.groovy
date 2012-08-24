@@ -190,7 +190,9 @@ class ApiFeedbackController {
         BufferedImage image = ImageIO.read(new ByteArrayInputStream(photo.data))
         BufferedImage thumbnail =
             resize(image, Method.SPEED, Mode.AUTOMATIC,
-                    200, 200, OP_ANTIALIAS);
+                    params.width?.isInteger() ? params.width as Integer : 200,
+                    params.height?.isInteger() ? params.height as Integer : 200,
+                    OP_ANTIALIAS);
 
         response.contentType = "image/jpeg"
         response.addHeader("Content-disposition", "filename='photo${photo.id}.jpeg'")
