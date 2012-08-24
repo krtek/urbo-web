@@ -29,8 +29,4 @@ public enum FeedbackState {
     }
 
     private final String description;
-
-    public String getDescription() {
-        return description;
-    }
 }
