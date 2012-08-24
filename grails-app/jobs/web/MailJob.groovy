@@ -5,7 +5,7 @@ import cz.urbo.cases.Feedback
 
 class MailJob {
     static triggers = {
-      simple repeatInterval: 10 * 1000L // execute job once in 5 seconds
+      simple repeatInterval: 10000 * 1000L // execute job once in 5 seconds
     }
 
     //injected automagically

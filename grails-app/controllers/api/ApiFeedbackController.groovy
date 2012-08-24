@@ -120,6 +120,7 @@ class ApiFeedbackController {
             //and save it to database
             authorObject.save()
         }
+        return authorObject
     }
 
     def findById() {
