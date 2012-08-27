@@ -14,7 +14,7 @@ import static org.imgscalr.Scalr.OP_ANTIALIAS
 import static org.imgscalr.Scalr.pad
 import static org.imgscalr.Scalr.OP_BRIGHTER
 
-class ThumbnailCacheService {
+class ThumbnailService {
     def cache = CacheBuilder.newBuilder().
     expireAfterWrite(60, TimeUnit.MINUTES).
     maximumSize(500).build();

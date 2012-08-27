@@ -6,9 +6,7 @@ import cz.urbo.cases.Author
 import cz.urbo.cases.Feedback
 import cz.urbo.cases.Location
 import cz.urbo.cases.Photo
-import java.awt.image.BufferedImage
 
-import static org.imgscalr.Scalr.*
 import javax.imageio.ImageIO
 import grails.validation.ValidationException;
 
@@ -20,7 +18,7 @@ class ApiFeedbackController {
     static allowedMethods = [save: 'POST']
 
     def feedbackService
-    def thumbnailCacheService
+    def thumbnailService
 
     def index() {
         findAll()
@@ -184,7 +182,7 @@ class ApiFeedbackController {
     }
 
     def getPhotoThumbnail() {
-        def thumbnail = thumbnailCacheService.getThumbnail(params.id, params.width, params.height)
+        def thumbnail = thumbnailService.getThumbnail(params.id, params.width, params.height)
 
         response.contentType = "image/jpeg"
         response.addHeader("Content-disposition", "filename='photo${params.id}.jpeg'")
