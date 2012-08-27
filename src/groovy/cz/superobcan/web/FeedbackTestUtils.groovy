@@ -32,17 +32,17 @@ class FeedbackTestUtils {
                 id: 3)
 
         def authorityResponseText =
-"""Milý občane,
+                    """Milý občane,
 
-Vámi nahlášený karamelový drak nebo chcete-li hadrová panenka, byl odstraněn dne
-31.07.2012. Zápach jak věříme zmizí v nejbližších pár dnech v závislosti na tom jak a jestli bude
-místnost větrána.
+                    Vámi nahlášený karamelový drak nebo chcete-li hadrová panenka, byl odstraněn dne
+                    31.07.2012. Zápach jak věříme zmizí v nejbližších pár dnech v závislosti na tom jak a jestli bude
+                    místnost větrána.
 
-Děkujeme za zpětnou vazbu a těšíme se na Váš další podnět.
+                    Děkujeme za zpětnou vazbu a těšíme se na Váš další podnět.
 
-S pozdravem Marie Urbová
-Odbor pro styk s veřejností, Městský úřad Praha 1
-"""
+                    S pozdravem Marie Urbová
+                    Odbor pro styk s veřejností, Městský úřad Praha 1
+                    """
 
         def authorityResponse = new AuthorityResponse(content: authorityResponseText)
         [
