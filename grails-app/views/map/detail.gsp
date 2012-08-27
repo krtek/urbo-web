@@ -2,8 +2,7 @@
 <!doctype html>
 <html>
 <head>
-    <meta name="layout" content="bootstrap"/>
-    <r:require module="jquery"/>
+    <meta name="layout" content="user"/>
     <title>Urbo: ${feedback.title}</title>
     <!-- STYLES -->
     <link href="${resource(dir: 'css', file: 'urbo.css')}" rel="stylesheet" type="text/css">

@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
 <head>
-    <meta name="layout" content="bootstrap"/>
+    <meta name="layout" content="user"/>
 
     <title>Urbo Mapa</title>
 

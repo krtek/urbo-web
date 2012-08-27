@@ -1,7 +1,7 @@
 <html>
 <head>
     <r:require modules="bootstrap"/>
-	<meta name='layout' content='bootstrap'/>
+	<meta name='layout' content='admin'/>
 
     <title>Urbo login</title>
 </head>
