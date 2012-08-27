@@ -1,4 +1,4 @@
-package web
+package cz.urbo.utils
 
 
 
@@ -8,7 +8,7 @@ import org.junit.*
 /**
  * See the API for {@link grails.test.mixin.services.ServiceUnitTestMixin} for usage instructions
  */
-@TestFor(FeedbackService)
+@TestFor(web.FeedbackService)
 class FeedbackServiceTests {
 
     void testSomething() {

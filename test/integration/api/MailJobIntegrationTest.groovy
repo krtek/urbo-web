@@ -1,15 +1,18 @@
 package api
 
 import org.junit.Test
-import web.MailJob
+import cz.urbo.jobs.MailJob
 import org.junit.Before
+import com.naleid.grails.MarkdownService
 
 class MailJobIntegrationTest extends GroovyTestCase {
     def MailJob mailJob
+    def MarkdownService markdownService
 
     @Before
     void setup() {
         mailJob = new MailJob()
+        markdownService = new MarkdownService()
     }
 
     @Test

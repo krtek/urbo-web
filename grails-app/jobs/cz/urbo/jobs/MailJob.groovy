@@ -1,4 +1,4 @@
-package web
+package cz.urbo.jobs
 
 import cz.urbo.dto.FeedbackState
 import cz.urbo.cases.Feedback
