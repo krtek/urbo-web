@@ -38,7 +38,7 @@
 						<span class="icon-bar"></span>
 					</a>
 					
-					<a class="brand" href="${createLink(uri: '/')}">Urbo</a>
+					<a class="brand" href="${createLink(uri: '/')}">Urbo: zlepši svět!</a>
                     <ul class="nav nav-pills">
                         <li class="dropdown" id="controllers">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#controllers">
