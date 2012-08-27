@@ -4,7 +4,7 @@ import grails.test.mixin.*
 import grails.test.mixin.support.*
 import org.junit.*
 import grails.test.MockUtils
-import cz.superobcan.web.FeedbackTestUtils
+import cz.urbo.utils.FeedbackTestUtils
 import cz.urbo.cases.Feedback
 
 /**

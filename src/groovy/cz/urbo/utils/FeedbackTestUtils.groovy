@@ -1,10 +1,11 @@
-package cz.superobcan.web
+package cz.urbo.utils
 
 import cz.urbo.cases.Author
 import cz.urbo.cases.AuthorityResponse
 import cz.urbo.cases.Feedback
 import cz.urbo.cases.Location
 import cz.urbo.cases.Photo
+import cz.urbo.dto.FeedbackState
 
 class FeedbackTestUtils {
 

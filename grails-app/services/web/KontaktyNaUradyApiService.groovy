@@ -1,7 +1,7 @@
 package web
 
-import cz.superobcan.web.Address
-import cz.superobcan.web.MunicipalAuthority
+import cz.urbo.dto.Address
+import cz.urbo.dto.MunicipalAuthority
 import groovy.json.JsonSlurper
 
 /**

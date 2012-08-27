@@ -1,6 +1,6 @@
 package web
 
-import cz.superobcan.web.FeedbackState
+import cz.urbo.dto.FeedbackState
 import cz.urbo.cases.Feedback
 
 class MailJob {

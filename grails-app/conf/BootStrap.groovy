@@ -1,4 +1,4 @@
-import cz.superobcan.web.FeedbackTestUtils
+import cz.urbo.utils.FeedbackTestUtils
 import grails.util.Environment
 import cz.urbo.user.UserRole
 import cz.urbo.user.Role

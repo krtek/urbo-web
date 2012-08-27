@@ -1,6 +1,6 @@
 package cz.urbo.cases
 
-import cz.superobcan.web.FeedbackState
+import cz.urbo.dto.FeedbackState
 import groovy.transform.EqualsAndHashCode
 
 /**
