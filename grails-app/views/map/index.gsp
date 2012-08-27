@@ -28,7 +28,7 @@
             (function(){
                 var location = new google.maps.LatLng(${feedback.location.latitude}, ${feedback.location.longitude});
                 var desc = '<div id="content"><h4><g:link controller="map" action="detail" id="${feedback.id}">${feedback.title}</g:link></h4>${feedback.description?.markdownToHtml()}<h6>Vytvořil: ${feedback.author}</h6></div>'
-                var marker = new google.maps.Marker({map:map, draggable:true, position: location, title:"${feedback.title}", icon: "${resource(dir: 'images', file: 'skull.png')}"});
+                var marker = new google.maps.Marker({map:map, draggable:true, position: location, title:"${feedback.title}", icon: "${resource(dir: 'images', file: 'star-3.png')}"});
                 google.maps.event.addListener(marker, 'click', function() {
                     if (infowindow) {
                         infowindow.close();
