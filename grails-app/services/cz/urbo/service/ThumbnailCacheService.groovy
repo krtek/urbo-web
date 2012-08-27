@@ -1,4 +1,4 @@
-package web
+package cz.urbo.service
 
 import java.util.concurrent.TimeUnit
 import com.google.common.cache.CacheBuilder

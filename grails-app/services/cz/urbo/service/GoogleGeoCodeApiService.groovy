@@ -1,4 +1,4 @@
-package web
+package cz.urbo.service
 
 import cz.urbo.dto.Address
 import cz.urbo.cases.Location

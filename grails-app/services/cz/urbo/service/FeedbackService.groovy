@@ -1,4 +1,4 @@
-package web
+package cz.urbo.service
 
 import groovy.json.JsonBuilder
 import cz.urbo.cases.Feedback
