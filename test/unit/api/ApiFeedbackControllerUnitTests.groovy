@@ -1,10 +1,10 @@
 package api
 
-import cz.superobcan.web.FeedbackTestUtils
+import cz.urbo.utils.FeedbackTestUtils
 import grails.test.MockUtils
 import grails.test.mixin.*
 import org.apache.commons.lang.StringUtils
-import api.ApiFeedbackController
+
 import cz.urbo.cases.Feedback
 import cz.urbo.cases.Author
 import cz.urbo.cases.Photo

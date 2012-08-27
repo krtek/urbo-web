@@ -43,16 +43,16 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-
+                            <g:sortableColumn property="id" title="${message(code: 'photo.data.id', default: 'Id')}" />
 							<g:sortableColumn property="data" title="${message(code: 'photo.data.label', default: 'Data')}" />
-						
 							<th></th>
 						</tr>
 					</thead>
 					<tbody>
 					<g:each in="${photoInstanceList}" var="photoInstance">
 						<tr>
-						
+
+                            <td>${photoInstance.id}</td>
 							<td><img class="urbo-image"
                                      src="${createLink(controller: 'apiFeedback', action:'getPhotoThumbnail', id: photoInstance.id)}"/></td>
 						

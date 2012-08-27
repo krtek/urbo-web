@@ -1,4 +1,4 @@
-package cz.superobcan.web
+package cz.urbo.dto
 
 
 public enum FeedbackState {

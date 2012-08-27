@@ -1,6 +1,6 @@
 package api
 
-import cz.superobcan.web.Address
+import cz.urbo.dto.Address
 import grails.test.mixin.TestFor
 import org.junit.Test
 import web.KontaktyNaUradyApiService

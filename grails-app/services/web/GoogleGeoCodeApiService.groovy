@@ -1,6 +1,6 @@
 package web
 
-import cz.superobcan.web.Address
+import cz.urbo.dto.Address
 import cz.urbo.cases.Location
 import groovy.json.JsonSlurper
 
