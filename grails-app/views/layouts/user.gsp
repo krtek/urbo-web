@@ -39,7 +39,7 @@
                 <span class="icon-bar"></span>
             </a>
 
-            <a class="brand" href="${createLink(uri: '/')}">Urbo</a>
+            <a class="brand" href="${createLink(uri: '/')}">Urbo: zlepši svět!</a>
         </div>
     </div>
 </nav>

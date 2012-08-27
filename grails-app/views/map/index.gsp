@@ -4,7 +4,7 @@
 <head>
     <meta name="layout" content="user"/>
 
-    <title>Urbo Mapa</title>
+    <title>Urbo: zlepši svět!</title>
 
     <!-- STYLES -->
     <link href="${resource(dir: 'css', file: 'shadowbox.css')}" rel="stylesheet" type="text/css">
@@ -44,13 +44,9 @@
 <body>
 <div class="row-fluid">
     <div class="span8">
-        <h3>Urbo mapa</h3>
-        <hr/>
         <div id="map-canvas"></div>
     </div>
     <div class="span4">
-        <h3>Poslední kauzy</h3>
-        <hr/>
         <g:each in="${lastFeedbacks}" var="feedback">
             <div class="well urbo-item">
                 <span class="label label-info">${feedback.state.description}</span>
