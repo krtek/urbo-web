@@ -2,9 +2,9 @@
 <!doctype html>
 <html>
 <head>
-    <meta name="layout" content="bootstrap"/>
+    <meta name="layout" content="user"/>
 
-    <title>Urbo Mapa</title>
+    <title>Urbo: zlepši svět!</title>
 
     <!-- STYLES -->
     <link href="${resource(dir: 'css', file: 'shadowbox.css')}" rel="stylesheet" type="text/css">
@@ -28,7 +28,7 @@
             (function(){
                 var location = new google.maps.LatLng(${feedback.location.latitude}, ${feedback.location.longitude});
                 var desc = '<div id="content"><h4><g:link controller="map" action="detail" id="${feedback.id}">${feedback.title}</g:link></h4>${feedback.description?.markdownToHtml()}<h6>Vytvořil: ${feedback.author}</h6></div>'
-                var marker = new google.maps.Marker({map:map, draggable:true, position: location, title:"${feedback.title}"});
+                var marker = new google.maps.Marker({map:map, draggable:true, position: location, title:"${feedback.title}", icon: "${resource(dir: 'images', file: 'star-3.png')}"});
                 google.maps.event.addListener(marker, 'click', function() {
                     if (infowindow) {
                         infowindow.close();
@@ -44,13 +44,9 @@
 <body>
 <div class="row-fluid">
     <div class="span8">
-        <h3>Urbo mapa</h3>
-        <hr/>
         <div id="map-canvas"></div>
     </div>
     <div class="span4">
-        <h3>Poslední kauzy</h3>
-        <hr/>
         <g:each in="${lastFeedbacks}" var="feedback">
             <div class="well urbo-item">
                 <span class="label label-info">${feedback.state.description}</span>

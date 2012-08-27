@@ -2,8 +2,7 @@
 <!doctype html>
 <html>
 <head>
-    <meta name="layout" content="bootstrap"/>
-    <r:require module="jquery"/>
+    <meta name="layout" content="user"/>
     <title>Urbo: ${feedback.title}</title>
     <!-- STYLES -->
     <link href="${resource(dir: 'css', file: 'urbo.css')}" rel="stylesheet" type="text/css">
@@ -25,7 +24,7 @@
             (function(){
                 var location = new google.maps.LatLng(${feedback.location.latitude}, ${feedback.location.longitude});
                 var desc = '<div id="content"><h4>${feedback.title}</h4>${feedback.description?.markdownToHtml()}<h6>Vytvořil: ${feedback.author}</h6></div>'
-                var marker = new google.maps.Marker({map:map, draggable:true, position: location, title:"${feedback.title}"});
+                var marker = new google.maps.Marker({map:map, draggable:true, position: location, title:"${feedback.title}", icon: "${resource(dir: 'images', file: 'star-3.png')}"});
                 google.maps.event.addListener(marker, 'click', function() {
                     if (infowindow) {
                         infowindow.close();
