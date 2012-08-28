@@ -67,6 +67,7 @@ environments {
 
         log4j = {
             debug 'org.hibernate.SQL'
+            debug 'cz.urbo'
         }
     }
     production {
@@ -94,6 +95,8 @@ log4j = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
+
+    info 'cz.urbo'
 
 }
 
