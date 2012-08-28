@@ -8,6 +8,10 @@
     height: 200px;
 }
 
+.urbo-item-title {
+    min-height: 64px;
+}
+
 .urbo-thumbnail-container-small {
     margin-right: 10px;
     float: left;

@@ -70,9 +70,7 @@
                         </div>
                         <div>${feedback.title}</div>
                     </g:link>
-
                 </h5>
-                <br/>
                 <div class="urbo-item-footer">
                     <h6>${feedback.author}<br/>
                     <g:formatDate format="${grailsApplication.config.urbo.dateFormat}" date="${feedback.dateCreated}"/></h6>
