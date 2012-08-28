@@ -24,7 +24,7 @@ class ThumbnailService {
         cache.get("${id}/${width}/${height}", new Callable() {
             @Override
             Object call() {
-                println "Cache miss for ${id}/${width}/${height}"
+                log.debug("Cache miss for ${id}/${width}/${height}")
                 def Photo photo = Photo.get(id)
                 assert photo
                 BufferedImage image = ImageIO.read(new ByteArrayInputStream(photo.data))

@@ -67,7 +67,7 @@ environments {
 
         log4j = {
             debug 'org.hibernate.SQL'
-            debug 'cz.urbo'
+            debug 'grails.app'
         }
     }
     production {
@@ -96,7 +96,7 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 
-    info 'cz.urbo'
+    info 'grails.app'
 
 }
 
