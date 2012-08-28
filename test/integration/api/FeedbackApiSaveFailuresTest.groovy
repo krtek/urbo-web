@@ -4,8 +4,8 @@ import org.apache.commons.lang.StringUtils
 import org.junit.Test
 import org.springframework.http.HttpMethod
 import cz.urbo.cases.Feedback
-import api.ApiFeedbackController
-import grails.test.mixin.TestFor
+import cz.urbo.api.ApiFeedbackController
+
 import cz.urbo.cases.Author
 
 

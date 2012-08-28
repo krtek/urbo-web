@@ -1,4 +1,4 @@
-package api
+package cz.urbo.api
 
 import cz.urbo.web.api.utils.org.apache.commons.httpclient.HttpStatus
 import groovy.json.JsonBuilder

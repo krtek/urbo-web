@@ -1,4 +1,4 @@
-package admin
+package cz.urbo.admin
 
 import cz.urbo.cases.Photo
 import grails.plugins.springsecurity.Secured

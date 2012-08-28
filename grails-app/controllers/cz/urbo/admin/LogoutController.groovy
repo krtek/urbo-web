@@ -1,3 +1,5 @@
+package cz.urbo.admin
+
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
 
 class LogoutController {
