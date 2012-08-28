@@ -182,6 +182,7 @@ class ApiFeedbackController {
     }
 
     def getPhotoThumbnail() {
+        log.debug("Thumbnail of #${params.id}, ${params.width}x${params.height}")
         def thumbnail = thumbnailService.getThumbnail(params.id, params.width, params.height)
 
         response.contentType = "image/jpeg"
