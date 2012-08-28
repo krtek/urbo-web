@@ -191,4 +191,14 @@ class ApiFeedbackController {
         return
     }
 
+    def getSquareThumbnail() {
+        log.debug("Square thumbnail of #${params.id}, ${params.width}x${params.width}")
+        def thumbnail = thumbnailService.getSquareThumbnail(params.id, params.width)
+
+        response.contentType = "image/jpeg"
+        response.addHeader("Content-disposition", "filename='photo${params.id}.jpeg'")
+        ImageIO.write(thumbnail, "JPEG", response.outputStream)
+        return
+    }
+
 }

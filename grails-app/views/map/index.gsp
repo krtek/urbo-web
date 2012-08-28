@@ -32,7 +32,7 @@
                             '<span class="label label-info" style="float: right; margin-left:10px;">${feedback.state.description}</span>' +
                             '<g:link controller="map" action="detail" id="${feedback.id}">' +
                             '<div class="urbo-thumbnail-container-small">' +
-                            '<img class="urbo-thumbnail" src="${createLink(controller: "apiFeedback", action:"getPhotoThumbnail", id: feedback.photo?.id, params: ["width": "60", "height": "60"])}"/>' +
+                            '<img class="urbo-thumbnail" src="${createLink(controller: "apiFeedback", action:"getSquareThumbnail", id: feedback.photo?.id, params: ["width": "60"])}"/>' +
                             '</div>' +
                             '<div>${feedback.title}</div>' +
                             '</g:link>' +
@@ -66,7 +66,7 @@
                     <span class="label label-info" style="float: right;margin-left:10px;">${feedback.state.description}</span>
                     <g:link controller="map" action="detail" id="${feedback.id}">
                         <div class="urbo-thumbnail-container-small">
-                            <img class="urbo-image" src="${createLink(controller: 'apiFeedback', action:'getPhotoThumbnail', id: feedback.photo?.id, params: ['width': '60', 'height': '60'])}"/>
+                            <img class="urbo-image" src="${createLink(controller: 'apiFeedback', action:'getSquareThumbnail', id: feedback.photo?.id, params: ['width': '60'])}"/>
                         </div>
                         <div>${feedback.title}</div>
                     </g:link>
