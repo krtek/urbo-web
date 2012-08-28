@@ -34,7 +34,7 @@ class ThumbnailService {
                             height?.isInteger() ? height as Integer : 200,
                             OP_ANTIALIAS,
                             OP_BRIGHTER);
-                thumbnail = pad(thumbnail, 4);
+                thumbnail = pad(thumbnail, 2);
                return thumbnail;
             }
         });
