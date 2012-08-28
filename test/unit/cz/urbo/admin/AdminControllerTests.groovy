@@ -11,7 +11,8 @@ import org.junit.*
 @TestFor(AdminController)
 class AdminControllerTests {
 
+    @Test
     void testSomething() {
-       fail "Implement me"
+
     }
 }
