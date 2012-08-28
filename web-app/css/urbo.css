@@ -8,16 +8,9 @@
     height: 200px;
 }
 
-.urbo-item .urbo-mini-detail {
-    min-height: 100px;
-    max-height: 180px;
-}
-
 .urbo-thumbnail {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
+    margin-right: 10px;
+    float: left;
 }
 
 .urbo-image {

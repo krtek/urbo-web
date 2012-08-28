@@ -49,22 +49,19 @@
     <div class="span4">
         <g:each in="${lastFeedbacks}" var="feedback">
             <div class="well urbo-item">
-                <span class="label label-info">${feedback.state.description}</span>
-                <h4 class="urbo-item-title">
-                    <g:link controller="map" action="detail" id="${feedback.id}">${feedback.title}</g:link>
-                </h4>
+                <h5 class="urbo-item-title">
+                    <g:link controller="map" action="detail" id="${feedback.id}">
+                        <img class="urbo-thumbnail" src="${createLink(controller: 'apiFeedback', action:'getPhotoThumbnail', id: feedback.photo?.id, params: ['width': '60', 'height': '60'])}"/>
+                        <div>${feedback.title}</div>
+                    </g:link>
+                    <span class="label label-info" style="float: right;">${feedback.state.description}</span>
+                </h5>
                 <br/>
-                <div class="urbo-mini-detail">
-                    <a href="${createLink(controller: 'apiFeedback', action:'getPhoto', id: feedback.photo?.id)}" rel="shadowbox[images];player=img" title="${feedback.title}">
-                        <img class="urbo-thumbnail"
-                             src="${createLink(controller: 'apiFeedback', action:'getPhotoThumbnail', id: feedback.photo?.id, width: 200, height: 200)}"/>
-                    </a>
-                    <div class="urbo-description">
-                        ${feedback.description?.markdownToHtml()}
-                    </div>
+                <div class="urbo-item-footer">
+                    <h6>${feedback.author}<br/>
+                    <g:formatDate format="${grailsApplication.config.urbo.dateFormat}" date="${feedback.dateCreated}"/></h6>
                 </div>
-                <br/>
-                <h6>Vytvořil: ${feedback.author}</h6>
+
             </div>
         </g:each>
     </div>
