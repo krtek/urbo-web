@@ -22,7 +22,7 @@ class UrlMappings {
         "/api/v1/thumbnail/$id/$width/$height"(controller: "apiFeedback", action: "getPhotoThumbnail")
 
         "/"(controller: "map")
-        "/admin" (view: "index")
+        "/admin" (controller: "admin")
 
 		"500"(view:'/error')
 	}
