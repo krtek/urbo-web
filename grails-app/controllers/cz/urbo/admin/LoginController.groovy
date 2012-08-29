@@ -1,3 +1,5 @@
+package cz.urbo.admin
+
 import grails.converters.JSON
 
 import javax.servlet.http.HttpServletResponse

@@ -3,7 +3,7 @@ package api
 import cz.urbo.dto.Address
 import grails.test.mixin.TestFor
 import org.junit.Test
-import web.KontaktyNaUradyApiService
+import cz.urbo.service.KontaktyNaUradyApiService
 
 @TestFor(KontaktyNaUradyApiService)
 class KontaktyNaUradyApiServiceTest extends GroovyTestCase {

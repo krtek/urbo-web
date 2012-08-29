@@ -1,4 +1,4 @@
-package web
+package cz.urbo.service
 
 import groovy.json.JsonBuilder
 import cz.urbo.cases.Feedback
@@ -20,7 +20,8 @@ class FeedbackService {
              authority_response: feedback.authorityResponse?.content,
              state: feedback.state?.description,
              lastUpdated: feedback.lastUpdated?.format("dd.MM.yyyy"),
-             dateCreated: feedback.dateCreated?.format("dd.MM.yyyy")]
+             dateCreated: feedback.dateCreated?.format("dd.MM.yyyy"),
+             photoId: feedback.photo?.id]
         }
 
         def builder = new JsonBuilder(feedbacks: feedbacksConverted)

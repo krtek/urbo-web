@@ -1,4 +1,4 @@
-package admin
+package cz.urbo.admin
 
 import cz.urbo.cases.Feedback
 import grails.plugins.springsecurity.Secured

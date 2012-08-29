@@ -10,6 +10,7 @@ import cz.urbo.cases.Author
 import cz.urbo.cases.Photo
 import cz.urbo.cases.Location
 import cz.urbo.cases.AuthorityResponse
+import cz.urbo.api.ApiFeedbackController
 /**
  * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
  */

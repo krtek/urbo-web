@@ -2,9 +2,9 @@
 <!doctype html>
 <html>
 <head>
-    <meta name="layout" content="bootstrap"/>
+    <meta name="layout" content="user"/>
 
-    <title>Urbo Mapa</title>
+    <title>Urbo: zlepši svět!</title>
 
     <!-- STYLES -->
     <link href="${resource(dir: 'css', file: 'shadowbox.css')}" rel="stylesheet" type="text/css">
@@ -27,8 +27,21 @@
             <g:each in="${allFeedbacks}" var="feedback">
             (function(){
                 var location = new google.maps.LatLng(${feedback.location.latitude}, ${feedback.location.longitude});
-                var desc = '<div id="content"><h4><g:link controller="map" action="detail" id="${feedback.id}">${feedback.title}</g:link></h4>${feedback.description?.markdownToHtml()}<h6>Vytvořil: ${feedback.author}</h6></div>'
-                var marker = new google.maps.Marker({map:map, draggable:true, position: location, title:"${feedback.title}"});
+                //copy paste from below - see right panel
+                var desc = '<h5 class="urbo-item-title">'+
+                            '<span class="label label-info" style="float: right; margin-left:10px;">${feedback.state.description}</span>' +
+                            '<g:link controller="map" action="detail" id="${feedback.id}">' +
+                            '<div class="urbo-thumbnail-container-small">' +
+                            '<img class="urbo-thumbnail" src="${createLink(controller: "apiFeedback", action:"getSquareThumbnail", id: feedback.photo?.id, params: ["width": "60"])}"/>' +
+                            '</div>' +
+                            '<div>${feedback.title}</div>' +
+                            '</g:link>' +
+                            '</h5>' +
+                            '<div class="urbo-item-footer">' +
+                            '<h6>${feedback.author}<br/>' +
+                            '<g:formatDate format="${grailsApplication.config.urbo.dateFormat}" date="${feedback.dateCreated}"/></h6>' +
+                            '</div>'
+                var marker = new google.maps.Marker({map:map, draggable:true, position: location, title:"${feedback.title}", icon: "${resource(dir: 'images', file: 'star-3.png')}"});
                 google.maps.event.addListener(marker, 'click', function() {
                     if (infowindow) {
                         infowindow.close();
@@ -44,31 +57,24 @@
 <body>
 <div class="row-fluid">
     <div class="span8">
-        <h3>Urbo mapa</h3>
-        <hr/>
-        <div id="map-canvas"></div>
+        <div id="map-canvas" class="thumbnail"></div>
     </div>
     <div class="span4">
-        <h3>Poslední kauzy</h3>
-        <hr/>
         <g:each in="${lastFeedbacks}" var="feedback">
             <div class="well urbo-item">
-                <span class="label label-info">${feedback.state.description}</span>
-                <h4 class="urbo-item-title">
-                    <g:link controller="map" action="detail" id="${feedback.id}">${feedback.title}</g:link>
-                </h4>
-                <br/>
-                <div class="urbo-mini-detail">
-                    <a href="${createLink(controller: 'apiFeedback', action:'getPhoto', id: feedback.photo?.id)}" rel="shadowbox[images];player=img" title="${feedback.title}">
-                        <img class="urbo-thumbnail"
-                             src="${createLink(controller: 'apiFeedback', action:'getPhotoThumbnail', id: feedback.photo?.id, width: 200, height: 200)}"/>
-                    </a>
-                    <div class="urbo-description">
-                        ${feedback.description?.markdownToHtml()}
-                    </div>
+                <h5 class="urbo-item-title">
+                    <span class="label label-info" style="float: right;margin-left:10px;">${feedback.state.description}</span>
+                    <g:link controller="map" action="detail" id="${feedback.id}">
+                        <div class="urbo-thumbnail-container-small">
+                            <img class="urbo-image thumbnail" src="${createLink(controller: 'apiFeedback', action:'getSquareThumbnail', id: feedback.photo?.id, params: ['width': '60'])}"/>
+                        </div>
+                        <div>${feedback.title}</div>
+                    </g:link>
+                </h5>
+                <div class="urbo-item-footer">
+                    <h6>${feedback.author}<br/>
+                    <g:formatDate format="${grailsApplication.config.urbo.dateFormat}" date="${feedback.dateCreated}"/></h6>
                 </div>
-                <br/>
-                <h6>Vytvořil: ${feedback.author}</h6>
             </div>
         </g:each>
     </div>

@@ -2,8 +2,7 @@
 <!doctype html>
 <html>
 <head>
-    <meta name="layout" content="bootstrap"/>
-    <r:require module="jquery"/>
+    <meta name="layout" content="user"/>
     <title>Urbo: ${feedback.title}</title>
     <!-- STYLES -->
     <link href="${resource(dir: 'css', file: 'urbo.css')}" rel="stylesheet" type="text/css">
@@ -25,7 +24,7 @@
             (function(){
                 var location = new google.maps.LatLng(${feedback.location.latitude}, ${feedback.location.longitude});
                 var desc = '<div id="content"><h4>${feedback.title}</h4>${feedback.description?.markdownToHtml()}<h6>Vytvořil: ${feedback.author}</h6></div>'
-                var marker = new google.maps.Marker({map:map, draggable:true, position: location, title:"${feedback.title}"});
+                var marker = new google.maps.Marker({map:map, draggable:true, position: location, title:"${feedback.title}", icon: "${resource(dir: 'images', file: 'star-3.png')}"});
                 google.maps.event.addListener(marker, 'click', function() {
                     if (infowindow) {
                         infowindow.close();
@@ -66,12 +65,12 @@
     </div>
     <div class="well span3">
         <a href="${createLink(controller: 'apiFeedback', action:'getPhoto', id: feedback.photo?.id)}" rel="shadowbox[images];player=img" title="${feedback.title}">
-            <img class="urbo-image"
-                 src="${createLink(controller: 'apiFeedback', action:'getPhotoThumbnail', id: feedback.photo?.id, width: 200, height: 200)}"/>
+            <img class="urbo-image thumbnail"
+                 src="${createLink(controller: 'apiFeedback', action:'getSquareThumbnail', id: feedback.photo?.id, params: ["width": "200"])}"/>
         </a>
 
         <hr/>
-        <div id="map-thumbnail"></div>
+        <div id="map-thumbnail" class="thumbnail"></div>
     </div>
 </div>
 

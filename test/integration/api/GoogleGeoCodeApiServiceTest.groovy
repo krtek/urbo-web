@@ -3,7 +3,7 @@ package api
 import cz.urbo.cases.Location
 import grails.test.mixin.TestFor
 import org.junit.Test
-import web.GoogleGeoCodeApiService
+import cz.urbo.service.GoogleGeoCodeApiService
 
 @TestFor(GoogleGeoCodeApiService)
 class GoogleGeoCodeApiServiceTest extends GroovyTestCase {

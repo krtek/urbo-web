@@ -1,4 +1,4 @@
-package api
+package cz.urbo.api
 
 import cz.urbo.web.api.utils.org.apache.commons.httpclient.HttpStatus
 import groovy.json.JsonBuilder
@@ -6,9 +6,7 @@ import cz.urbo.cases.Author
 import cz.urbo.cases.Feedback
 import cz.urbo.cases.Location
 import cz.urbo.cases.Photo
-import java.awt.image.BufferedImage
 
-import static org.imgscalr.Scalr.*
 import javax.imageio.ImageIO
 import grails.validation.ValidationException;
 
@@ -20,7 +18,7 @@ class ApiFeedbackController {
     static allowedMethods = [save: 'POST']
 
     def feedbackService
-    def thumbnailCacheService
+    def thumbnailService
 
     def index() {
         findAll()
@@ -184,7 +182,18 @@ class ApiFeedbackController {
     }
 
     def getPhotoThumbnail() {
-        def thumbnail = thumbnailCacheService.getThumbnail(params.id, params.width, params.height)
+        log.debug("Thumbnail of #${params.id}, ${params.width}x${params.height}")
+        def thumbnail = thumbnailService.getThumbnail(params.id, params.width, params.height)
+
+        response.contentType = "image/jpeg"
+        response.addHeader("Content-disposition", "filename='photo${params.id}.jpeg'")
+        ImageIO.write(thumbnail, "JPEG", response.outputStream)
+        return
+    }
+
+    def getSquareThumbnail() {
+        log.debug("Square thumbnail of #${params.id}, ${params.width}x${params.width}")
+        def thumbnail = thumbnailService.getSquareThumbnail(params.id, params.width)
 
         response.contentType = "image/jpeg"
         response.addHeader("Content-disposition", "filename='photo${params.id}.jpeg'")

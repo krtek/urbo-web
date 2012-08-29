@@ -1,4 +1,4 @@
-package api
+package cz.urbo.api
 
 class ApiHelpController {
 

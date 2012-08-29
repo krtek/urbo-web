@@ -1,4 +1,4 @@
-package urbo
+package cz.urbo.web
 
 import cz.urbo.dto.FeedbackState
 import cz.urbo.cases.Feedback

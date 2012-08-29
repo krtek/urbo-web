@@ -1,17 +1,17 @@
-package urbo
+package cz.urbo.admin
 
 
 
 import grails.test.mixin.*
-
-import cz.urbo.web.MapController
+import org.junit.*
 
 /**
  * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
  */
-@TestFor(MapController)
-class MapControllerTests {
+@TestFor(AdminController)
+class AdminControllerTests {
 
+    @Test
     void testSomething() {
 
     }

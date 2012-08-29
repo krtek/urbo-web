@@ -67,6 +67,7 @@ class FeedbackTestUtils {
                         description: "děsně to zapáchá",
                         location: new Location(latitude: 50.07647, longitude: 14.40216),
                         state: FeedbackState.FIXED,
+                        photo: photoOfUrboTheGreat,
                         authorityResponse: authorityResponse
                 ),
 
@@ -75,7 +76,9 @@ class FeedbackTestUtils {
                         title: "Rozsypaná popelnice",
                         description: "Na chodníku se válí krabice, slepice, konvice, truhlice, \n hned pošlete oranžový čepice!",
                         location: new Location(latitude: 50.02678, longitude: 14.43455),
+                        photo: photoOfUrboTheGreat,
                         state: FeedbackState.CREATED
+
                 ),
 
                 new Feedback(
