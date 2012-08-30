@@ -21,6 +21,8 @@ class UrlMappings {
 
         "/api/v1/thumbnail/$id/$width/$height"(controller: "apiFeedback", action: "getPhotoThumbnail")
 
+        "/api/v1/sqthumbnail/$id/$width"(controller: "apiFeedback", action: "getSquareThumbnail")
+
         "/"(controller: "map")
         "/admin" (controller: "admin")
 
