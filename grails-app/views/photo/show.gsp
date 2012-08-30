@@ -42,7 +42,7 @@
 
 				<dl>
 
-                <img class="urbo-image"
+                <img class="urbo-image thumbnail"
                      src="${createLink(controller: 'apiFeedback', action:'getPhotoThumbnail', id: photoInstance.id)}"/>
 				</dl>
 

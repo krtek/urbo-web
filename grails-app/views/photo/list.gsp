@@ -53,7 +53,7 @@
 						<tr>
 
                             <td>${photoInstance.id}</td>
-							<td><img class="urbo-image"
+							<td><img class="urbo-image thumbnail"
                                      src="${createLink(controller: 'apiFeedback', action:'getPhotoThumbnail', id: photoInstance.id)}"/></td>
 						
 							<td class="link">
