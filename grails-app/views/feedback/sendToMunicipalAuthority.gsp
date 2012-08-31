@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
 <head>
-    <meta name="layout" content="bootstrap">
+    <meta name="layout" content="admin">
     <g:set var="entityName" value="${message(code: 'feedback.label', default: 'Feedback')}"/>
     <title><g:message code="default.show.label" args="[entityName]"/></title>
     <script type="text/javascript"
