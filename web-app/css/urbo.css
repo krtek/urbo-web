@@ -15,15 +15,23 @@
 .urbo-thumbnail-container-small {
     margin-right: 10px;
     float: left;
-    width: 70px;
-    height: 70px;
     overflow: hidden;
 }
 
-.urbo-image {
+.urbo-image-small {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 60px;
+    height: 60px;
+}
+
+.urbo-image-large {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 200px;
 }
 
 #map-canvas img {

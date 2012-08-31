@@ -65,7 +65,7 @@
     </div>
     <div class="well span3">
         <a href="${createLink(controller: 'apiFeedback', action:'getPhoto', id: feedback.photo?.id)}" rel="shadowbox[images];player=img" title="${feedback.title}">
-            <img class="urbo-image thumbnail"
+            <img class="urbo-image-large thumbnail"
                  src="${createLink(controller: 'apiFeedback', action:'getSquareThumbnail', id: feedback.photo?.id, params: ["width": "200"])}"/>
         </a>
 
