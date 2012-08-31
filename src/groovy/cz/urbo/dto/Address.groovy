@@ -6,4 +6,9 @@ class Address {
     def streetNumber
     def streetName
 
+    @Override
+    String toString() {
+        "${streetName} ${streetNumber}, ${town}"
+    }
+
 }
