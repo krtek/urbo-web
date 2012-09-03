@@ -20,18 +20,10 @@
             };
             var map = new google.maps.Map(document.getElementById("map-thumbnail"),
                     mapOptions);
-            var infowindow = new google.maps.InfoWindow({content: null});
             (function(){
                 var location = new google.maps.LatLng(${feedback.location.latitude}, ${feedback.location.longitude});
                 var desc = '<div id="content"><h4>${feedback.title}</h4>${feedback.description?.markdownToHtml()}<h6>Vytvořil: ${feedback.author}</h6></div>'
                 var marker = new google.maps.Marker({map:map, draggable:true, position: location, title:"${feedback.title}", icon: "${resource(dir: 'images', file: 'star-3.png')}"});
-                google.maps.event.addListener(marker, 'click', function() {
-                    if (infowindow) {
-                        infowindow.close();
-                    }
-                    infowindow = new google.maps.InfoWindow({content: desc});
-                    infowindow.open(map,marker);
-                });
             })();
         }
     </script>
