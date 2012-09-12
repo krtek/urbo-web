@@ -115,6 +115,9 @@ grails {
 
 markdown.hardwraps = true
 
+//Twitter bootstrap <g:paginate> fix
+grails.plugins.twitterbootstrap.fixtaglib = true
+
 // Added by the Spring Security Core plugin:
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'cz.urbo.user.User'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'cz.urbo.user.UserRole'
