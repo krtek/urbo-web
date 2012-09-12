@@ -127,3 +127,4 @@ grails.plugins.springsecurity.password.encodeHashAsBase64 = true
 
 //Urbo config items:
 urbo.dateFormat = "dd.MM.yyyy HH:mm:ss"
+urbo.pagination.max = 3

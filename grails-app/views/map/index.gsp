@@ -77,7 +77,7 @@
                 </div>
             </div>
         </g:each>
-        <g:paginate controller="Map" action="index" total="${count}" max="4" prev="Novější" next="Starší" class="pagination-centered"/>
+        <g:paginate controller="Map" action="index" total="${count}" max="${grailsApplication.config.urbo.pagination.max}" prev="Novější" next="Starší" class="pagination-centered"/>
     </div>
 </div>
 

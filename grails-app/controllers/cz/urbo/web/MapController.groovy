@@ -7,7 +7,7 @@ class MapController {
 
     def index() {
         if (!params.max) {
-            params.max = 4;
+            params.max = grailsApplication.config.urbo.pagination.max
         }
 
         if (!params.offset) {
